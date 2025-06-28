@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Gift</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Screen -->
+    <div id="main-screen" class="screen active">
+        <div class="container">
+            <div class="heart-icon">💖</div>
+            <h1>Insert Your Birthday</h1>
+            <div class="hearts-row">
+                <div class="heart-box filled">❤️</div>
+                <div class="heart-box"></div>
+                <div class="heart-box"></div>
+                <div class="heart-box"></div>
+            </div>
+            <div class="keypad">
+                <button class="key" onclick="enterDigit('1')">1</button>
+                <button class="key" onclick="enterDigit('2')">2</button>
+                <button class="key" onclick="enterDigit('3')">3</button>
+                <button class="key" onclick="enterDigit('4')">4</button>
+                <button class="key" onclick="enterDigit('5')">5</button>
+                <button class="key" onclick="enterDigit('6')">6</button>
+                <button class="key" onclick="enterDigit('7')">7</button>
+                <button class="key" onclick="enterDigit('8')">8</button>
+                <button class="key" onclick="enterDigit('9')">9</button>
+                <button class="key clear" onclick="clearCode()">×</button>
+                <button class="key" onclick="enterDigit('0')">0</button>
+                <button class="key unlock" onclick="unlockGift()">🔓</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anniversary Screen -->
+    <div id="anniversary-screen" class="screen">
+        <div class="container">
+            <h1 class="anniversary-title">Happy Anniversary Day! 💖</h1>
+            <div class="cute-couple">
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUydmNmNGQ0MzVscHp1ZndhdmJlbDk1eGlnMjU5c2dybWR4ZTRhb2J4ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute couple" class="couple-gif">
+            </div>
+            
+            <div class="main-content">
+                <h2>💝 Love Letters</h2>
+                <div class="love-letter" onclick="showLetter('myLove')">
+                    <h3>My Love</h3>
+                    <p>Click to open</p>
+                </div>
+                <div class="love-letter" onclick="showLetter('foreverLove')">
+                    <h3>My Forever Love</h3>
+                    <p>Click to open</p>
+                </div>
+                
+                <h2 style="margin-top: 40px;">📸 Our Memories</h2>
+                <div class="memory-slider">
+                    <button class="slider-btn prev" onclick="prevMemory()">‹</button>
+                    <div class="memory-photo"></div>
+                    <button class="slider-btn next" onclick="nextMemory()">›</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="romantic-vinyl">
+            <div class="vinyl-container">
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyejB4dGZ4dGZ2ZGo3YnczbzR0c2FvdDdmcThhZmI4NGwza3UzNTNucyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/feoiimZW63Y1J4j5pC/giphy.gif" alt="Vinyl Record" class="vinyl-gif" id="vinyl">
+                <button class="play-button" onclick="toggleMusic()" id="playBtn">▶</button>
+            </div>
+            <div class="music-title">Our Song</div>
+            <audio id="backgroundMusic" loop>
+                <source src="Lilith.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <!-- Letter Popup -->
+    <div id="letter-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closeLetter()">×</button>
+            <div id="letter-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <button class="skip-btn" onclick="skipTyping()">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
